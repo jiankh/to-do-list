@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --dark-color: #bae6fd;
+    --medium-color: #e0f2fe;
+    --light-color:#f0f9ff;
+    --contrast-color: #fdd1ba;
+}
+
+body {
+    height: 100vh;
+}
+
+/* HEADER */
+#page-header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark-color);
+    padding: 20px;
+}
+
+/* Content Container */
+#content {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+
+/* SIDEBAR */
+.sidebar  {
+    display: flex;
+    flex-direction: column;
+    width:20vw;
+}
+.main-sidebar, .project-sidebar  {
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAIN */
+
+.main-content {
+    background-color: var(--contrast-color);
+    width: 100%;
+}
+
+
+
+
