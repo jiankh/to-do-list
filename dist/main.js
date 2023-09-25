@@ -1,14 +1,1 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	
-/******/ 	
-/******/ })()
-;
+(()=>{"use strict";new class{constructor(e,t,d,n){this.title=e,this.description=t,this.dueDate=d,this.priority=n}displayCard(){!function(e,t,d){const n=document.querySelector(".main-content"),a=document.createElement("div");a.classList.add("todo-card"),1===d&&a.classList.add("priority");const c=document.createElement("input");c.type="checkbox",c.name="isComplete",c.id="isComplete";const i=document.createElement("div");i.className="card-title",i.textContent=e;const s=document.createElement("div");s.className="card-details";const o=document.createElement("button");o.textContent="detail",s.appendChild(o);const l=document.createElement("div");l.className="card-date",l.textContent=t;const r=document.createElement("div");r.className="delete-card";const p=document.createElement("button");p.textContent="delete",r.appendChild(p),a.appendChild(c),a.appendChild(i),a.appendChild(s),a.appendChild(l),a.appendChild(r),n.appendChild(a)}(this.title,this.dueDate,this.priority)}}("bookTitle","blblab","feb 27",1).displayCard()})();

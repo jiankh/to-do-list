@@ -46,8 +46,20 @@ body {
 .main-content {
     background-color: var(--contrast-color);
     width: 100%;
+    padding: 30px 15vh;
 }
 
+/* CARD */
+.todo-card {
+    display: flex;
+    gap: 10px;
+    background-color: var(--light-color);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.card-title {
+    flex:1;
+}
 
 
 
