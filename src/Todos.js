@@ -8,6 +8,8 @@ class Todos {
         this.priority = priority;
     }
 
+    
+
     displayCard() {
         createCard(this.title, this.dueDate, this.priority)
     }

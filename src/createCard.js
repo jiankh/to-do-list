@@ -4,7 +4,7 @@ function createCard(title,dueDate, priority) {
 
     const card = document.createElement("div");
     card.classList.add("todo-card")
-    if (priority === 1) {
+    if (priority === true) {
         card.classList.add("priority");
     };
 

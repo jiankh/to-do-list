@@ -81,8 +81,7 @@ class AddTask {
     
         // Create a button element for adding the task
         const addTaskButton = document.createElement("button");
-        addTaskButton.type = "submit";
-        addTaskButton.className = "add-book-inner";
+        addTaskButton.className = "add-task-button";
         addTaskButton.textContent = "Add Task";
     
         // Create a button element for closing the dialog
