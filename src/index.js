@@ -16,31 +16,31 @@ EventListenerModule.init();
 
 //project section
 
-const projectContainer = document.querySelector("[data-projects-list]");
+// const projectContainer = document.querySelector("[data-projects-list]");
 
-function saveProject() {
-    localStorage.setItem(LOCAL_STORAGE_PROJECT_KEY, JSON.stringify(projectArray))
-}
+// function saveProject() {
+//     localStorage.setItem(LOCAL_STORAGE_PROJECT_KEY, JSON.stringify(projectArray))
+// }
 
-function saveAndRenderProject() {
-    saveProject();
-    renderProject();
-};
+// function saveAndRenderProject() {
+//     saveProject();
+//     renderProject();
+// };
 
-function renderProject() {
-    clearElement(projectContainer);
-    projectArray.forEach((project) => {
-        const projectElement = document.createElement("li");
-        projectElement.dataset.projectId = project.id;
-        projectElement.classList.add("project-name");
-        projectElement.innerText = project.name;
-        projectContainer.appendChild(projectElement)
-    })
-}
+// function renderProject() {
+//     clearElement(projectContainer);
+//     projectArray.forEach((project) => {
+//         const projectElement = document.createElement("li");
+//         projectElement.dataset.projectId = project.id;
+//         projectElement.classList.add("project-name");
+//         projectElement.innerText = project.name;
+//         projectContainer.appendChild(projectElement)
+//     })
+// }
 
-function clearElement(element) {
-    element.innerHTML = "";
-}
+// function clearElement(element) {
+//     element.innerHTML = "";
+// }
 
 
 //NEW PROJECT BUTTON ADD
