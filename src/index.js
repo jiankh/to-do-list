@@ -1,26 +1,12 @@
 // import Todos from "./Todos";
-// import Project from "./Project";
-// import EventListenerModule from './EventListenerModule';
+import Project from "./Project";
+import EventListenerModule from './EventListenerModule';
 
 const LOCAL_STORAGE_PROJECT_KEY = "task.project";
 let projectArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY)) || [];
 
 const LOCAL_STORAGE_TASK_KEY = "task.todos";
 let toDoArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASK_KEY)) || [];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 EventListenerModule.init();
 
@@ -35,9 +21,9 @@ function saveProject() {
 }
 
 function saveAndRenderProject() {
-    saveProject()
-    renderProject()
-}
+    saveProject();
+    renderProject();
+};
 
 function renderProject() {
     clearElement(projectContainer);

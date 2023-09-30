@@ -13,11 +13,6 @@ module.exports = {
     port: 8080,
   },
   devtool: 'inline-source-map',
-  plugins: [
-    new HtmlWebpackPlugin({
-     title: 'Development',
-    }),
-  ],
   module: {
     rules: [
       {

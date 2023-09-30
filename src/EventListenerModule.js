@@ -1,10 +1,10 @@
-// import AddTask from "./newTaskDialog";
+import {createDialog, showDialog, hideDialog} from "./newTaskDialog"
 // import parseForm from "./parseForm"
 
 // Define the EventListenerModule
 const EventListenerModule = {
   init() {
-    AddTask.createDialog();
+    createDialog();
 
     const addTaskBtn = document.querySelector(".add-task-btn");
     const allTaskBtn = document.querySelector(".all-task-btn");
@@ -16,25 +16,24 @@ const EventListenerModule = {
 
 
     addTaskBtn.addEventListener("click", () => {
-      // AddTask.showDialog();
+      createDialog();
       const dialog = document.querySelector("#newTaskDialog")
-      dialog.show()
+      showDialog()
     });
 
     closeTaskDialog.addEventListener("click", (e) => {
       e.preventDefault();
       form.reset();
-      AddTask.hideDialog();
+      hideDialog();
     });
 
     submitTaskBtn.addEventListener("click", (e) => {
       e.preventDefault();
       parseForm();
       form.reset();
-      AddTask.hideDialog();
+      hideDialog();
     });
   },
 };
   
-  // Export the EventListenerModule so it can be used elsewhere
   export default EventListenerModule;
