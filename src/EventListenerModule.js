@@ -1,5 +1,5 @@
-import AddTask from "./addTask";
-import parseForm from "./parseForm"
+// import AddTask from "./newTaskDialog";
+// import parseForm from "./parseForm"
 
 // Define the EventListenerModule
 const EventListenerModule = {
@@ -16,7 +16,9 @@ const EventListenerModule = {
 
 
     addTaskBtn.addEventListener("click", () => {
-      AddTask.showDialog();
+      // AddTask.showDialog();
+      const dialog = document.querySelector("#newTaskDialog")
+      dialog.show()
     });
 
     closeTaskDialog.addEventListener("click", (e) => {

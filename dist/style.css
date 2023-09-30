@@ -41,6 +41,8 @@ body {
     flex-direction: column;
 }
 
+
+
 /* MAIN */
 
 .main-content {
@@ -107,3 +109,15 @@ body {
     justify-content: space-between;
 }
 
+/* PROJECT TAB */
+
+
+.project-name {
+    text-align: center;
+    cursor: pointer;
+}
+
+.project-selected {
+    font-size: 1.2rem;
+    font-weight: 800;
+}

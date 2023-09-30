@@ -6,9 +6,9 @@ class Todos {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.id = Date.now().toString();
     }
 
-    
 
     displayCard() {
         createCard(this.title, this.dueDate, this.priority)

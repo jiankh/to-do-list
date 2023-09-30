@@ -1,12 +1,14 @@
 
-function createCard(title,dueDate, priority) {
+function createCard(title,dueDate, priority,id) {
     const main = document.querySelector(".main-content");
 
     const card = document.createElement("div");
     card.classList.add("todo-card")
+    card.dataset.taskid = id;
     if (priority === true) {
         card.classList.add("priority");
     };
+
 
     // checkbox 
     const checkbox = document.createElement("input");

@@ -17,14 +17,21 @@
         <div class="sidebar">
             <div class="main-sidebar">
                 <h2>Home</h2>
-                <button class="add-task-btn">+ add task</button>
-                <button class="all-task-btn">All Tasks</button>
-                <button class="today-task-btn">Today's Tasks</button>
-                <button class="priority-task-btn">Priority Tasks</button>
+                <ul>
+                  <li class="add-task-btn">+ add task</li>
+                  <li class="all-task-btn">All Tasks</li>
+                  <li class="today-task-btn">Today's Tasks</li>
+                  <li class="priority-task-btn">Priority Tasks</li>
+                </ul>
             </div>
             <div class="project-sidebar">
                 <h2>Projects</h2>
-                <button>Create new Project</button>
+                <ul data-projects-list></ul>
+                <form>
+                  <input type="text" name="newProject" id="new-project-input" placeholder="Add New Project">
+                  <button>+</button>
+                </form>
+                
             </div>
         </div>
 
