@@ -1,12 +1,15 @@
 // import Todos from "./Todos";
 import Project from "./Project";
-import EventListenerModule from './EventListenerModule';
+import EventListenerModule from './NewTaskModule';
+import { NewProjectModule } from "./NewProjectModule";
+import { initialize } from "./LocalStorageHandler";
 
-const LOCAL_STORAGE_PROJECT_KEY = "task.project";
-let projectArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY)) || [];
 
-const LOCAL_STORAGE_TASK_KEY = "task.todos";
-let toDoArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASK_KEY)) || [];
+// const LOCAL_STORAGE_PROJECT_KEY = "task.project";
+// let projectArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY)) || [];
+
+// const LOCAL_STORAGE_TASK_KEY = "task.todos";
+// let toDoArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASK_KEY)) || [];
 
 EventListenerModule.init();
 
@@ -14,7 +17,6 @@ EventListenerModule.init();
 //project section
 
 const projectContainer = document.querySelector("[data-projects-list]");
-
 
 function saveProject() {
     localStorage.setItem(LOCAL_STORAGE_PROJECT_KEY, JSON.stringify(projectArray))
@@ -42,24 +44,22 @@ function clearElement(element) {
 
 
 //NEW PROJECT BUTTON ADD
-const newProjectForm = document.querySelector("[data-new-project-form]")
-const newProjectInput = document.querySelector("[data-new-project-input]")
+// const newProjectForm = document.querySelector("[data-new-project-form]")
+// const newProjectInput = document.querySelector("[data-new-project-input]")
 
-newProjectForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-    const projectName = newProjectInput.value;
-    if (projectName == null || projectName === "") return //if empty name dont make the project
-    const project = createProject(projectName);
-    newProjectInput.value = null; //clear the form
-    projectArray.push(project);
-    saveAndRenderProject()
-})
+// newProjectForm.addEventListener("submit", (e) => {
+//     e.preventDefault()
+//     const projectName = newProjectInput.value;
+//     if (projectName == null || projectName === "") return //if empty name dont make the project
+//     const project = createProject(projectName);
+//     newProjectInput.value = null; //clear the form
+//     projectArray.push(project);
+//     saveAndRenderProject()
+// })
 
-function createProject(name) {
-    return new Project(name)
-}
+initialize();
+NewProjectModule.init();
 
-renderProject()
 
 
 // //TASK RENDER
