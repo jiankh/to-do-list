@@ -4,7 +4,7 @@ import {saveAndRenderProject, pushToProjectStorage, renderProject} from "./Local
 const NewProjectModule = {
     init() {
         renderProject();
-        
+
         const newProjectForm = document.querySelector("[data-new-project-form]")
         const newProjectInput = document.querySelector("[data-new-project-input]")
 
@@ -19,6 +19,5 @@ const NewProjectModule = {
         })
     },
 };
-
 
 export {NewProjectModule}

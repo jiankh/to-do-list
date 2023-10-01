@@ -1,5 +1,9 @@
+import createCard from "./createCard";
+
 const LOCAL_STORAGE_PROJECT_KEY = "task.project";
 const LOCAL_STORAGE_TASK_KEY = "task.todos";
+const projectContainer = document.querySelector("[data-projects-list]");
+const main = document.querySelector(".main-content");
 
 let toDoArray = [];
 let projectArray =[];
@@ -10,11 +14,9 @@ function initialize() {
     projectArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY)) || [];
 
     renderProject();
+    renderTask();
 }
 
-
-
-const projectContainer = document.querySelector("[data-projects-list]");
 
 function saveProject() {
     localStorage.setItem(LOCAL_STORAGE_PROJECT_KEY, JSON.stringify(projectArray))
@@ -42,6 +44,36 @@ function pushToProjectStorage(string) {
 
 function clearElement(element) {
     element.innerHTML = "";
+};
+
+// TASKS 
+
+function renderTask() {
+    clearElement(main);
+    toDoArray.forEach((task) => {
+        createCard(task.title, task.dueDate, task.priority, task.id);
+    })
 }
 
-export {saveAndRenderProject, pushToProjectStorage, renderProject, initialize}
+function saveTask() {
+    localStorage.setItem(LOCAL_STORAGE_TASK_KEY, JSON.stringify(toDoArray))
+}
+
+function saveAndRenderTask() {
+    saveTask();
+    renderTask();
+};
+
+function pushToTaskStorage(string) {
+    toDoArray.push(string);
+}
+
+
+export {saveAndRenderProject, 
+        pushToProjectStorage, 
+        renderProject, 
+        initialize, 
+        renderTask, 
+        saveAndRenderTask,
+        pushToTaskStorage    
+    }

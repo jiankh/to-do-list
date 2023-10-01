@@ -1,3 +1,5 @@
+import Todos from "./Todos"
+
 function extractForm() {
     const title = document.querySelector('#task-title').value
     const description = document.querySelector('#description').value
@@ -7,11 +9,10 @@ function extractForm() {
     return {title,description,date,isPriority}
 }
 
-function parseForm() {
+function createTask() {
     const newTaskInfo = extractForm()
-
     const newTask = new Todos(newTaskInfo.title, newTaskInfo.description, newTaskInfo.date, newTaskInfo.isPriority)
     newTask.displayCard()
 } 
 
-export {extractForm, parseForm}
+export { createTask }

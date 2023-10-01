@@ -1,8 +1,11 @@
+import Todos from "./Todos";
+import {pushToTaskStorage, saveAndRenderTask} from "./LocalStorageHandler"
+import { createTask } from "./formHandler";
 
 const NewTaskModule = {
   init() {
+    //DIALOG POPUP SECTION
     createDialog();
-
     const addTaskBtn = document.querySelector(".add-task-btn");
     const form = document.querySelector(".new-task-form")
     let closeTaskDialog = document.querySelector(".close-window");
@@ -19,15 +22,34 @@ const NewTaskModule = {
       hideDialog();
     });
 
-    submitTaskBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      parseForm();
-      form.reset();
-      hideDialog();
-    });
-  },
-};
+    // submitTaskBtn.addEventListener("click", (e) => {
+    //   e.preventDefault();
+    //   createTask();
+    //   form.reset();
+    //   hideDialog();
+    // });
 
+    //HANDLING THE NEW TASK SUBMISSION
+    const newTaskForm = document.querySelector(".new-task-form");
+    const newTaskTitle = document.querySelector("#task-title");
+    const newTaskDescription = document.querySelector("#description");
+    const newTaskDate = document.querySelector("#date");
+    const newTaskPriority = document.querySelector("#priority");
+
+    newTaskForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const taskName = newTaskTitle.value;
+        const taskDescription = newTaskDescription.value;
+        const taskDate = newTaskDate.value;
+        const taskPriority = newTaskPriority.value;
+
+        const task = new Todos(taskName,taskDescription,taskDate,taskPriority)
+        console.log(task);
+        pushToTaskStorage(task);
+        saveAndRenderTask();
+    })
+  }
+};
 
 function createDialog() {
   const newTaskDialog = document.createElement("dialog");
@@ -147,4 +169,4 @@ function hideDialog() {
 }
 
   
-  export default NewTaskModule;
+export default NewTaskModule;
