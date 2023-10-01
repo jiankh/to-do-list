@@ -27,7 +27,8 @@ function initialize() {
 // PROJECT
 
 function saveProject() {
-    localStorage.setItem(LOCAL_STORAGE_PROJECT_KEY, JSON.stringify(projectArray))
+    localStorage.setItem(LOCAL_STORAGE_PROJECT_KEY, JSON.stringify(projectArray));
+    localStorage.setItem(LOCAL_STORAGE_SELECTED_ID, selectedItem)
 }
 
 function saveAndRenderProject() {
@@ -37,6 +38,8 @@ function saveAndRenderProject() {
 
 function renderProject() {
     clearElement(projectContainer);
+    
+
     projectArray.forEach((project) => {
         const projectElement = document.createElement("li");
         projectElement.dataset.projectId = project.id;
@@ -47,11 +50,38 @@ function renderProject() {
 
         projectContainer.appendChild(projectElement)
     })
+
+    renderInsideProject()
 }
 
 function pushToProjectStorage(string) {
     projectArray.push(string);
 };
+
+//INISDE PROJECTS
+const contentContainer = document.querySelector(".main-content");
+const titleContainer = document.querySelector(".main-title");
+
+function renderInsideProject() {
+    const selectedProject = projectArray.find((project) => project.id === selectedItem)
+
+    if (selectedItem == null) {
+        contentContainer.style.display = "none";
+    } else {
+        contentContainer.style.display = "";
+        titleContainer.innerHTML = selectedProject.name;
+    }
+}
+// We look for the item from the array by using find function first,
+//we check if there is a selected item or not.
+//if we do, set the title of the project into the html title
+
+
+
+
+
+
+
 
 
 // TASKS 

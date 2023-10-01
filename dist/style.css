@@ -45,7 +45,7 @@ body {
 
 /* MAIN */
 
-.main-content {
+.container {
     background-color: var(--contrast-color);
     width: 100%;
     padding: 30px 15vh;

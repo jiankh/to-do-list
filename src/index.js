@@ -21,6 +21,8 @@ projectList.addEventListener("click", (e) => {
     if (e.target.tagName.toLowerCase() === "li") {
         setSelected(e.target.dataset.projectId);    
         saveAndRenderProject();
-
     }
 })
+
+
+

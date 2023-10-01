@@ -44,7 +44,6 @@ const NewTaskModule = {
         const taskPriority = newTaskPriority.value;
 
         const task = new Todos(taskName,taskDescription,taskDate,taskPriority)
-        console.log(task);
         pushToTaskStorage(task);
         saveAndRenderTask();
     })
