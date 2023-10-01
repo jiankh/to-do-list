@@ -1,17 +1,3 @@
-import EventListenerModule from './NewTaskModule';
-import { NewProjectModule } from "./NewProjectModule";
-import { initialize } from "./LocalStorageHandler";
-import NewTaskModule from './NewTaskModule';
-
-EventListenerModule.init();
-
-initialize();
-NewProjectModule.init(); //contains the listener for new
-NewTaskModule.init();
-
-
-
-
 import {setSelected, saveAndRenderProject} from "./LocalStorageHandler"
 
 // SELECTED ELEMENT
