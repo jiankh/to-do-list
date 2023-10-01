@@ -81,8 +81,21 @@ function renderInsideProject() {
 
 
 
+function addListenerToDelete() {
+    const deleteTaskBtns = document.querySelectorAll(".delete-task-button");
+    deleteTaskBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            deleteCard(btn.dataset.deleteId)})
+    })
+}
 
-
+function deleteCard(id) {
+    const temp = toDoArray.filter((task) => { 
+        return task.id !== id;
+    })
+    toDoArray = temp;
+    saveAndRenderTask()
+} 
 
 // TASKS 
 
@@ -91,6 +104,8 @@ function renderTask() {
     toDoArray.forEach((task) => {
         createCard(task.title, task.dueDate, task.priority, task.id);
     })
+
+    addListenerToDelete();
 }
 
 function saveTask() {

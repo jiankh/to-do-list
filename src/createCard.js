@@ -38,7 +38,10 @@ function createCard(title,dueDate, priority,id) {
     deleteCard.className = "delete-card";
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "delete";
+    deleteButton.dataset.deleteId = id;
+    deleteButton.classList.add("delete-task-button")
     deleteCard.appendChild(deleteButton);
+    
 
     card.appendChild(checkbox);
     card.appendChild(cardTitle);

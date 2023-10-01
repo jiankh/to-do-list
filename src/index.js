@@ -1,6 +1,6 @@
 import EventListenerModule from './NewTaskModule';
 import { NewProjectModule } from "./NewProjectModule";
-import { initialize } from "./LocalStorageHandler";
+import { initialize, renderTask } from "./LocalStorageHandler";
 import NewTaskModule from './NewTaskModule';
 
 EventListenerModule.init();
@@ -23,6 +23,5 @@ projectList.addEventListener("click", (e) => {
         saveAndRenderProject();
     }
 })
-
 
 

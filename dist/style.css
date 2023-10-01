@@ -49,6 +49,11 @@ body {
     background-color: var(--contrast-color);
     width: 100%;
     padding: 30px 15vh;
+    position: relative;
+}
+
+.main-content {
+    position: relative;
 }
 
 /* CARD */
@@ -68,6 +73,8 @@ body {
     margin:auto;
     padding: 0 50px;
     width: 30vw;
+    position: absolute;
+    top: 0;
 }
 
 .form-container {

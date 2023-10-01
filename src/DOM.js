@@ -10,3 +10,4 @@ projectList.addEventListener("click", (e) => {
 
     }
 })
+
